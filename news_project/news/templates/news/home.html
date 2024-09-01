@@ -1,0 +1,28 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+<section class="scrolling-cards">
+    <h2>Trending News</h2>
+    <div class="scroll-container">
+        {% for article in trending_news %}
+            <div class="news-card">
+                <img src="{{ article.urlToImage }}" alt="News Image">
+                <h3>{{ article.title }}</h3>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="regular-news">
+    <h2>Regular News</h2>
+    <div class="news-list">
+        {% for article in regular_news %}
+            <article class="news-item">
+                <img src="{{ article.urlToImage }}" alt="News Image">
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.description }}</p>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

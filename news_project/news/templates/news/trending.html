@@ -1,0 +1,16 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+<section class="trending-news">
+    <h2>Trending News</h2>
+    <div class="news-list">
+        {% for article in trending_news %}
+            <article class="news-item">
+                <img src="{{ article.urlToImage }}" alt="News Image">
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.description }}</p>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
